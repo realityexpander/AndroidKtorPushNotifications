@@ -13,6 +13,6 @@ class PushApplication : Application() {
     }
 
     companion object {
-        private const val ONESIGNAL_APP_ID = "cb36d618-3937-4e76-a615-22ec5bec1643"
+        private const val ONESIGNAL_APP_ID = "01206360-f412-41b8-b4ed-830f026b4660"
     }
 }

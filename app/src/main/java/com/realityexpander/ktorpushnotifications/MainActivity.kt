@@ -8,6 +8,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.realityexpander.ktorpushnotifications.data.remote.ApiServiceImpl
 import com.realityexpander.ktorpushnotifications.ui.theme.KtorPushNotificationsTheme
@@ -22,6 +23,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             KtorPushNotificationsTheme {
                 Column(
@@ -37,24 +39,32 @@ class MainActivity : ComponentActivity() {
                     var description by remember {
                         mutableStateOf("")
                     }
+
+                    // Title
                     TextField(
                         value = title,
                         onValueChange = { title = it },
+                        colors = TextFieldDefaults.textFieldColors(textColor = MaterialTheme.colors.onBackground),
                         placeholder = {
                             Text("Title")
                         },
                         modifier = Modifier.fillMaxWidth()
                     )
                     Spacer(modifier = Modifier.height(8.dp))
+
+                    // Description
                     TextField(
                         value = description,
                         onValueChange = { description = it },
+                        colors = TextFieldDefaults.textFieldColors(textColor = MaterialTheme.colors.onBackground),
                         placeholder = {
                             Text("Description")
                         },
                         modifier = Modifier.fillMaxWidth()
                     )
                     Spacer(modifier = Modifier.height(8.dp))
+
+                    // Send Notification
                     Button(
                         onClick = {
                             scope.launch {

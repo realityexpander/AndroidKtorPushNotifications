@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:name="com.realityexpander.ktorpushnotifications.PushApplication"
+        android:name=".PushApplication"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"
         android:label="@string/app_name"
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KtorPushNotifications">
         <activity
-            android:name="com.realityexpander.ktorpushnotifications.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.KtorPushNotifications.NoActionBar">
