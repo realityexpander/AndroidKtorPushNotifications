@@ -1,4 +1,4 @@
-package com.plcoding.ktorpushnotifications
+package com.realityexpander.ktorpushnotifications
 
 import org.junit.Test
 

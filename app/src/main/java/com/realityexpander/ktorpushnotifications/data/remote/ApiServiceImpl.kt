@@ -1,4 +1,4 @@
-package com.plcoding.ktorpushnotifications.data.remote
+package com.realityexpander.ktorpushnotifications.data.remote
 
 import io.ktor.client.*
 import io.ktor.client.request.*

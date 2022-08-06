@@ -1,4 +1,4 @@
-package com.plcoding.ktorpushnotifications.ui.theme
+package com.realityexpander.ktorpushnotifications.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

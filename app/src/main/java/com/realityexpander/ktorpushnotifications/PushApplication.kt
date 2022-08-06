@@ -1,4 +1,4 @@
-package com.plcoding.ktorpushnotifications
+package com.realityexpander.ktorpushnotifications
 
 import android.app.Application
 import com.onesignal.OneSignal

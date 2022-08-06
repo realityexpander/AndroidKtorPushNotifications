@@ -1,4 +1,4 @@
-package com.plcoding.ktorpushnotifications
+package com.realityexpander.ktorpushnotifications
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,10 +8,9 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.plcoding.ktorpushnotifications.data.remote.ApiServiceImpl
-import com.plcoding.ktorpushnotifications.ui.theme.KtorPushNotificationsTheme
+import com.realityexpander.ktorpushnotifications.data.remote.ApiServiceImpl
+import com.realityexpander.ktorpushnotifications.ui.theme.KtorPushNotificationsTheme
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import kotlinx.coroutines.launch
