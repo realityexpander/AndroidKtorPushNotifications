@@ -21,6 +21,11 @@ import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import kotlinx.coroutines.launch
 
+// Dashboard: https://app.onesignal.com/apps/01206360-f412-41b8-b4ed-830f026b4660#outcomes=os__click__count
+// https://app.onesignal.com/apps/01206360-f412-41b8-b4ed-830f026b4660/notifications/bdc3eaba-4946-4f9c-b453-37a81233fae3#outcomes=os__click__count
+// https://documentation.onesignal.com/reference/push-channel-properties#attachments
+// https://documentation.onesignal.com/v7.0/docs/push-notification-guide
+
 class MainActivity : ComponentActivity(), OSPermissionObserver {
 
     private val client = HttpClient(Android)
