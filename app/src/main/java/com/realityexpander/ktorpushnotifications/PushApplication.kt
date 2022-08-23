@@ -100,6 +100,7 @@ class PushApplication : Application() {
                 // Force remove push from Notification Center after 30 seconds
                 builder.setTimeoutAfter(30000)
 
+                // Open the app when the notification is tapped
                 val notifyIntent = Intent(this, MainActivity::class.java).apply {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 }
@@ -111,8 +112,8 @@ class PushApplication : Application() {
                 // Add an action
                 builder.addAction(
                     NotificationCompat.Action.Builder
-//                        (android.R.drawable.arrow_up_float, "EXTRA", null)
-                        (R.drawable.ic_notification, "EXTRA", notifyPendingIntent)
+//                        (android.R.drawable.arrow_up_float, "OPEN APP", null)
+                        (R.drawable.ic_notification, "OPEN APP", notifyPendingIntent)
                         .build()
                 )
 
