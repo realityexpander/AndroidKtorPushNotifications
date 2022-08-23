@@ -25,47 +25,27 @@ class PushApplication : Application() {
 
         OneSignal.setNotificationOpenedHandler(MyNotificationOpenedHandler())
 
-        OneSignal.OSNotificationOpenedHandler {
-            println("OneSignalNotificationOpened: $it")
-
-            // This fires when a notification is opened by tapping on it.
-            OneSignal.clearOneSignalNotifications()
-
-            // Return true to display the notification.
-            // Return false to hide the notification.
-            true
-        }
+        // works for some reason
+//        OneSignal.setNotificationOpenedHandler { p0 ->
+//            println("OneSignalNotificationOpened: $p0")
+//
+//            // This fires when a notification is opened by tapping on it.
+//            OneSignal.clearOneSignalNotifications()
+//        }
 
         OneSignal.OSRemoteNotificationReceivedHandler(MyNotificationServiceExtension())
 
-        OneSignal.OSNotificationWillShowInForegroundHandler {
-            println("OSNotificationWillShowInForegroundHandler: $it")
-
-            // This fires when a notification is shown while the app is in the foreground.
-            OneSignal.clearOneSignalNotifications()
-
-            // Return true to display the notification.
-            // Return false to hide the notification.
-            true
-        }
-
-        OneSignal.OSRemoteNotificationReceivedHandler { context, osNotificationReceivedEvent ->
-            println("OSRemoteNotificationReceivedHandler: $osNotificationReceivedEvent")
-        }
-
-        OneSignal.OSNotificationWillShowInForegroundHandler {
-            println("OSNotificationWillShowInForegroundHandler: $it")
-        }
+        // Does not work for some reason...??!?!
+//        OneSignal.OSRemoteNotificationReceivedHandler { context, osNotificationReceivedEvent ->
+//            println("OSRemoteNotificationReceivedHandler: $osNotificationReceivedEvent")
+//        }
 
         OneSignal.setInAppMessageClickHandler {
             println("setInAppMessageClickHandler: $it")
         }
 
-        OneSignal.clearOneSignalNotifications()
-
         val device = OneSignal.getDeviceState()
         val notificationPermissionStatus = device?.areNotificationsEnabled()
-
 
         // Changes the notification visual attributes before it is displayed.
         OneSignal.setNotificationWillShowInForegroundHandler { notificationReceivedEvent ->
@@ -189,7 +169,6 @@ class MyNotificationServiceExtension : OneSignal.OSRemoteNotificationReceivedHan
 
     override fun invoke(p1: Context, p2: OSNotificationReceivedEvent) {
         println("MyNotificationServiceExtension invoke: $p2")
-
         this.remoteNotificationReceived(p1, p2)
     }
 }
